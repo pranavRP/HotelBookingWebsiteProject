@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div>
+        <a href="#close" title="Close" class="close">X</a><br>
+        <h2>Please Login</h2>
+        <form action="index.html">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="enter user name" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="enter password" required><br>
+            <input type="submit" value="Login">
+          </form>
+        </div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            </script>
+    </body>
+</html> 
+
