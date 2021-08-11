@@ -1,33 +1,47 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>login</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <div>
-        <a href="#close" title="Close" class="close">X</a><br>
-        <h2>Please Login</h2>
-        <form action="index.html">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="enter user name" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="enter password" required><br>
-            <input type="submit" value="Login">
-          </form>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/common.css" >
+  </head>
+  <body>
+    <!-- Button to trigger login modal -->
+    <button class="btn btn-light" data-toggle="modal" data-target="#loginModal">Login</button>
+    <!-- Login modal -->
+    <div class="modal fade" id="loginModal" data-backdrop="static">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">Login</h5>
+            <buttom type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </buttom>
+          </div>
+          <div class="modal-body">
+            <form id="login-form" action = "index.html">
+              <div class="form-group">
+                <label for ="email">Email Address</label>
+                  <input id="email" name="email" type="email" class="form-control" required placeholder="yourname@email.com" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for ="password" >Password</label>
+                <input id="password" name="password" type="password" class="form-control" required  placeholder="*******" autocomplete="off">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label" for="remember">Remember me</label>
+              </div>
+              <button id="login-btn" class="btn btn-primary btn-block rounded-pill" type="submit" name="submit" >Login</button>
+            </form>
+          </div>
         </div>
-        <script>
-            // Get the modal
-            var modal = document.getElementById('id01');
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-            </script>
-    </body>
-</html> 
-
+      </div>
+    </div>
+  </body>
+</html>

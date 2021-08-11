@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-     <title>Contact</title>
-</head>
-<body>
-    
-        <p>Thank you for reaching out!!!</p>
-        <p>Please enter your email and we will get back to you.</p>
-        <form action="index.html">
-            <label for="email"></label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" required><br>
-            <input type="submit" value="Submit">
-        </form>
-    
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/common.css">
+  </head>
+  <body>
+    <!-- Button to trigger contact modal -->
+    <button id="contact" class="btn btn-info" data-toggle="modal" data-target="#contactModal">Contact us</button>
+    <!-- Contact modal -->
+    <div class="modal fade" id="contactModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title w-100 text-center">&#9993; Contact us &#9993;</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body border-bottom-0">
+            <div class="text-center">
+              <p>Thank you for reaching out to us!</p>
+              <p>Our team will get in touch with you soon &#128515;</p>
+            </div>
+            <form id = "contact-form" action = "index.html">
+              <div class="form-group">
+                <label for = "name">Name</label>
+                <input id ="name" class="form-control" type = "text" name = "name" required placeholder="Jose Markose">
+              </div>
+              <div class="form-group">
+                <label for = "email-contact">Email</label>
+                <input id ="email-contact" class="form-control" type = "email" name = "email" required placeholder="yourname@email.com">
+              </div>
+              <div class="form-group">
+                <label for = "phone">Mobile</label>
+                <input id ="phone" class="form-control" type ="text" name = "phone" required placeholder="(+91)__________">
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary rounded-pill ml-auto mr-auto" type="submit" id="contact-btn" name="submit-contact">
+                  <span>Contact me</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

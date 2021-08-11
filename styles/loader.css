@@ -1,26 +1,32 @@
-body{
-    margin: 0%;
-    height: 100%;
-    width: 100%;
-}
-.loader{
-    border: 12px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 12px solid #444444;
-    width: 70px;
-    height: 70px; 
+body {
     display: flex;
-    animation: spin 1s linear infinite;
-}
-.parent{
-    align-items: center;
-    display: flex;    
     justify-content: center;
-    height: 100%;
-    width: 100%;
-} 
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  } 
+    align-items: center;
+  }
+  
+  div {
+    height: 70px;
+    position: relative;
+    width: 70px;
+    border-radius: 50%;
+    border: 12px solid #f3f3f3;
+    border-top-color: #444444;
+    animation-name: loader;
+    animation: loader 1s linear infinite forwards;
+  }
+  
+  @keyframes loader {
+    25% {
+      transform: rotate(90deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(270deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

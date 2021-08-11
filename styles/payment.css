@@ -1,95 +1,135 @@
-.content{
+.payment-img {
+  height: 270px;
+  width: 300px;
+}
+
+#payment-hotel {
+  height: fit-content;
+  width: 50%;
+  display: flex;
+  background-color: rgb(132, 136, 139);
+  margin: auto;
+}
+
+#payment-hotel div {
+  margin-left: 4%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  overflow-y: auto;
+  justify-content: center;
 }
-.mainDiv{
-  display: flex;
-  flex-direction: row;
-  width: auto;
-  height: auto;
-  background-color: rgb(132, 136, 139);
-  margin-bottom: 4%;
-  margin-top: 4%;
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.content>.mainDiv>.image>img{
-  height: 200px;
-  width: 250px;
-  max-height: 300px;
-  max-width: 270px;
+h2,
+h3,
+h4{
+  font-family: cursive;
 }
-.content>.mainDiv>.text{
-  padding-left:4% ;
+
+span {
+  padding-bottom: 1%;
 }
-.mainDiv2{
+
+#bill {
+  background-color: rosybrown;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  align-content: center;
+  margin: 0 2%;
+  margin-bottom: 4%;
+  padding: 1% 0;
   border: 1px solid black;
   border-radius: 5px;
-  width: 95%;
-  margin-left: 2%;
-  margin-right: 2%;
-  background-color: rosybrown;
-  margin-bottom: 4%;
 }
-@media screen and (max-width: 576px){
-  .content{
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      overflow-y: auto;
+
+#bill span:first-of-type {
+  padding-bottom: 0;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Small screens */
+@media only screen and (max-width: 575px) {
+  main {
+    width: 100%;
+    margin-top: 12%;
+    overflow: auto;
+    margin-bottom: 10%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+    position: relative;
+    box-sizing: border-box;
+    display: block;      
   }
-  .mainDiv{
+
+  #payment-hotel {
+      height: 80%;
+      width: 98%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      margin: auto;
+      margin-bottom: 10%;
+  }
+
+  .payment-img {
+      height: 60%;
+      width: 85%;
+      margin: 2% auto;
+  }
+
+  #payment-hotel div {
+      width: 100%;
+      margin: 4% auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
       align-items: center;
-      width: 90%;
-      height: auto;
-      background-color: rgb(132, 136, 139);
+  }
+
+  #bill {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 0 2%;
       margin-bottom: 4%;
-      margin-top: 4%;
-  }
-  .content>.mainDiv>.text{
-      padding:4% ;
-  }
-  .mainDiv2{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      align-content: center;
+      padding: 2% 2%;
       border: 1px solid black;
       border-radius: 5px;
-      width: 90%;
-      margin-left: 2%;
-      margin-right: 2%;
-      background-color: rosybrown;
-      margin-bottom: 4%;
   }
-  .pay{
-      align-self: center;
-      padding:2%;
-  }
-  .image, .detailDiv, .amount-details{
-      padding: 2%;
-  }
-  @media screen and (min-width: 576px) and (max-width:768px){
-    .mainDiv{
-        display: flex;
-        flex-direction: row;
-        width: 80%;
-        height: auto;
-        background-color: rgb(132, 136, 139);
-        margin-bottom: 4%;
 
-    }
+  #payment-details {
+      width: 100%;
+  }
 }
-} 
+
+/* Medium sized screens */
+@media only screen and (min-width:576px) and (max-width: 768px) {
+  main {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: auto;
+  }
+  #payment-hotel {
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    background-color: rgb(132, 136, 139);
+    margin: 0 auto;
+  }
+
+  #bill {
+    width: 95%;
+  }
+}
