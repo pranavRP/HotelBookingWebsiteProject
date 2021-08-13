@@ -8,6 +8,62 @@ body {
   font-family: 'Ubuntu', 'sans-serif';
 }
 
+/* Loader */
+
+#loader-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 999;
+  background-color: #f3f3f3;
+}
+.hidden {
+  animation: hide 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+  100%{
+    opacity: 0;
+    display: none;
+    z-index:-999;
+  }
+}
+
+#loader-icon {
+  height: 70px;
+  position: relative;
+  width: 70px;
+  border-radius: 50%;
+  border: 12px solid #f3f3f3;
+  border-top-color: #444444;
+  border-right-color: #444444;
+  border-left-color: deeppink;
+  border-bottom-color: deeppink;
+  animation: loader 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loader {
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* Header section */
 #logo {
   height: 60px;

@@ -13,6 +13,7 @@
   padding-top: 165px;
   padding-bottom: 165px;
   display: flex;
+  flex-direction: column;
   justify-content: stretch;
   position: relative;
 }
@@ -28,6 +29,15 @@
 
 #city:focus {
   outline:none;
+}
+
+.search-options {
+  background-color: bisque;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 12px ;
+  font-size: 16px;
+  width: 100%;
 }
 
 #citycards {

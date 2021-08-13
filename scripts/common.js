@@ -1,14 +1,14 @@
-// debugger;
-const headerEl = document.getElementsByTagName('header')[0];
-const footerEl = document.getElementsByTagName('footer')[0];
+const headerEl = document.getElementsByTagName('header')[0]; // Header Div
+const footerEl = document.getElementsByTagName('footer')[0]; // Footer Dov
 
-
+// Header template
 headerEl.innerHTML = 
 `<a id="logo-link" href="index.html">
   <img id= "logo" src = "assests/images/logo.png" alt = "logo" height = "100" width = "150">
 </a>
 <button id="login" class="btn btn-light" data-toggle="modal" data-target="#loginModal">Login</button>`
 
+// Footer template
 footerEl.innerHTML = 
 `<button id="contact" class="btn btn-info" data-toggle="modal" data-target="#contactModal">Contact us</button>
 <div id="social">
@@ -20,7 +20,8 @@ footerEl.innerHTML =
   <p>&copy; 2021 HOTEL BOOKING PVT LTD</p>
 </div>`
 
-const loginEl = document.getElementById("loginModal");
+const loginEl = document.getElementById("loginModal"); //Login Modal
+// Login modal template
 loginEl.innerHTML = 
 `  <div class="modal-dialog">
 <div class="modal-content">
@@ -31,7 +32,7 @@ loginEl.innerHTML =
     </buttom>
   </div>
   <div class="modal-body">
-    <form id="login-form" action = "index.html">
+    <form id="login-form" action = "#">
       <div class="form-group">
         <label for ="email">Email Address</label>
           <input id="email" name="email" type="email" class="form-control" required placeholder="yourname@email.com" autocomplete="off">
@@ -50,7 +51,8 @@ loginEl.innerHTML =
 </div>
 </div>`;
 
-const contactEl = document.getElementById("contactModal");
+const contactEl = document.getElementById("contactModal"); // Contact Modal
+// Contact modal template
 contactEl.innerHTML =
 `<div class="modal-dialog">
   <div class="modal-content">
@@ -67,8 +69,8 @@ contactEl.innerHTML =
       </div>
       <form id = "contact-form" action = "index.html">
         <div class="form-group">
-          <label for = "name">Name</label>
-          <input id ="name" class="form-control" type = "text" name = "name" required placeholder="Jose Markose">
+          <label for = "name-contact">Name</label>
+          <input id ="name-contact" class="form-control" type = "text" name = "name" required placeholder="Jose Markose">
         </div>
         <div class="form-group">
           <label for = "email-contact">Email</label>
@@ -88,29 +90,26 @@ contactEl.innerHTML =
   </div>
 </div>`;
 
-const headerLogin = document.getElementById("login");
-const loginEmail = document.getElementById("email");
-const loginPass = document.getElementById("password");
-const loginBtn = document.getElementById("login-btn");
-let isLoggedIn = false;
+const headerLogin = document.getElementById("login"); // Login button in the header
+const loginEmail = document.getElementById("email"); // Email input in the Login modal
+const loginPass = document.getElementById("password"); // Password input in the Login modal
+const loginBtn = document.getElementById("login-btn"); // Login button in the Login modal
+let isLoggedIn = false; // check ------>
 
+// Event listener for click on the login button inside the login modal
 loginBtn.addEventListener("click", ()=> {
   localStorage.setItem("Email", loginEmail.value);
   localStorage.setItem("Password", window.btoa(loginPass.value));
   isLoggedIn = true;
   localStorage.setItem("Login", "true");
   alert("Logged in");
-  // confirm("Hello?")
   headerLogin.innerText = "Logout";
-
-
 })
 
+// Event listener for click on the login button inside the header
 headerLogin.addEventListener("click", (event) => {
-  // debugger;
   if(localStorage.getItem("Login") === "true"){
     headerLogin.innerText = "Login";
-    // headerLogin.
     isLoggedIn = false;
     alert("Logged out")
     headerLogin.dataset.target = "";
@@ -121,10 +120,10 @@ headerLogin.addEventListener("click", (event) => {
     location.reload()
   } else {
     headerLogin.dataset.target = "#loginModal";
-    
   }
 })
 
+// To toggle Login button inside the header
 if(localStorage.getItem("Login") === "true"){
   headerLogin.innerText = "Logout";
   isLoggedIn = true;
@@ -133,3 +132,17 @@ if(localStorage.getItem("Login") === "true"){
   headerLogin.innerText = "Login";
   headerLogin.dataset.target = "#loginModal";
 }
+
+const loaderDiv = document.getElementById("loader-div"); // Loader container
+// Loader template
+const loaderTemplate = 
+`<div id="loader">
+<div id="loader-icon">
+</div>        
+</div>`;
+loaderDiv.innerHTML = loaderTemplate;
+
+// Event listener to remove loader when the page is loaded
+window.addEventListener("load", ()=>{
+  loaderDiv.className += " hidden";
+})

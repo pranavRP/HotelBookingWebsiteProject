@@ -32,18 +32,6 @@
   width: 100%;
 }
 
-#rad-card {
-  float : left;
-}
-
-#lalit-card {
-  float : left;
-}
-
-#taj-card {
-  float: left;
-}
-
 .hotel-card div {
   margin: 0;
 }
@@ -53,6 +41,7 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: nowrap;
+  float:left;
 }
 
 .hotel-card > *:last-child {
